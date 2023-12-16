@@ -1,11 +1,10 @@
 # turbowarp-extensions
+A personal collection of extensions for Turbowarp, the better version of Scratch.
 
 ## MultiTouch
-
 TODO: rewrite the code
 
 ## GPT
-
 `set [option] to [value]` Sets a parameter for initializing or modifying a request.
 
 - `option` The parameter that will be set.
