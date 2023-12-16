@@ -1,5 +1,5 @@
 # turbowarp-extensions
-A personal collection of extensions for Turbowarp, the better version of Scratch.
+A collection of extensions for Turbowarp, the better version of Scratch.
 
 ## MultiTouch
 TODO: rewrite the code
