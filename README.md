@@ -2,7 +2,7 @@
 A collection of extensions for Turbowarp, the better version of Scratch.
 
 ## MultiTouch
-TODO: rewrite the code
+Deprecated in favor of ObviousAlexC's [Sensing Plus](https://turbowarp.org/editor?extension=https://extensions.turbowarp.org/obviousAlexC/SensingPlus.js) extension
 
 ## GPT
 `set [option] to [value]` Sets a parameter for initializing or modifying a request.
