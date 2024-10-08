@@ -3,11 +3,12 @@
 
     let message = "";
 
-    window.onmessage = (e) => {
-        message = e.data;
-    };
+    window.addEventListener("message", (event) => {
+        message = event.data;
+        Scratch.vm.runtime.startHats("ionvoppostmessage_whenMessageReceived");
+    });
 
-    class MyExtension {
+    class IonvopPostMessage {
         getInfo () {
             return {
                 id: "ionvoppostmessage",
@@ -18,20 +19,15 @@
                 docsURI: "https://github.com/ionvop/turbowarp-extensions",
                 blocks: [
                     {
-                        opcode: "getMessage",
-                        blockType: Scratch.BlockType.REPORTER,
-                        text: "get message"
+                        opcode: "whenMessageReceived",
+                        blockType: Scratch.BlockType.EVENT,
+                        text: "when message received",
+                        isEdgeActivated: false
                     },
                     {
-                        opcode: "setMessage",
-                        blockType: Scratch.BlockType.COMMAND,
-                        text: "set message [message]",
-                        arguments: {
-                            message: {
-                                type: Scratch.ArgumentType.STRING,
-                                defaultValue: "Hello, world!"
-                            }
-                        }
+                        opcode: "message",
+                        blockType: Scratch.BlockType.REPORTER,
+                        text: "message"
                     },
                     {
                         opcode: "postMessage",
@@ -48,12 +44,8 @@
             };
         }
 
-        getMessage() {
+        message() {
             return message;
-        }
-
-        setMessage(args) {
-            message = args.message;
         }
 
         postMessage(args) {
@@ -61,5 +53,5 @@
         }
     }
 
-    Scratch.extensions.register(new MyExtension());
+    Scratch.extensions.register(new IonvopPostMessage());
 })(Scratch);
